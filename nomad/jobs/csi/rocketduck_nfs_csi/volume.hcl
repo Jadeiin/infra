@@ -1,6 +1,6 @@
-id = "example" # ID as seen in nomad
-name = "example" # Display name
-type = "csi"
+id        = "test-volume" # ID as seen in nomad
+name      = "test-volume" # Display name
+type      = "csi"
 plugin_id = "nfs" # Needs to match the deployed plugin
 
 capability {
@@ -9,8 +9,7 @@ capability {
 }
 
 parameters { # Optional, allows changing owner (etc) during volume creation
-    uid = "1000"
-    gid = "1000"
-    mode = "770"
-
+  uid  = "1000"
+  gid  = "1000"
+  mode = "770"
 }

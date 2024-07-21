@@ -13,7 +13,7 @@ job "storage-controller" {
           "--type=controller",
           "--node-id=${attr.unique.hostname}",
           "--nfs-server=192.168.100.103:/srv/nfs", # Adjust accordingly
-          "--mount-options=defaults", # Adjust accordingly
+          "--mount-options=defaults",              # Adjust accordingly
         ]
 
         network_mode = "host" # required so the mount works even after stopping the container

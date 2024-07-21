@@ -38,9 +38,9 @@ job "democratic-csi" {
       }
 
       csi_plugin {
-        id             = "org.democratic-csi.local-hostpath"
-        type           = "monolith"
-        mount_dir      = "/csi-data"
+        id        = "org.democratic-csi.local-hostpath"
+        type      = "monolith"
+        mount_dir = "/csi-data"
         #health_timeout = "150s"
       }
 
