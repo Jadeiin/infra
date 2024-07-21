@@ -11,6 +11,10 @@ job "traefik" {
       value     = "sf-1"
     }
 
+    ephemeral_disk {
+      migrate = true
+    }
+
     network {
       port "http" {
         static = 80
@@ -71,9 +75,9 @@ job "traefik" {
         #}
 
         mount {
-          type   = "bind"
-          target = "/etc/traefik/traefik.toml"
-          source = "local/traefik.toml"
+          type     = "bind"
+          target   = "/etc/traefik/traefik.toml"
+          source   = "local/traefik.toml"
           readonly = true
         }
       }
@@ -87,7 +91,7 @@ job "traefik" {
   address = ":{{env "NOMAD_PORT_https"}}"
   [entryPoints.traefik]
   address = ":{{env "NOMAD_PORT_dashboard"}}"
-        
+
 [certificatesResolvers.letsencrypt.acme]
   email = "{{ with nomadVar "nomad/jobs" }}{{ .email }}{{ end }}"
   storage = "local/acme.json"
