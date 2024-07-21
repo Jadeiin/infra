@@ -6,7 +6,7 @@ job "plugin-nfs-controller" {
       driver = "docker"
 
       config {
-        image = "registry.k8s.io/sig-storage/nfsplugin:v4.7.0"
+        image = "registry.k8s.io/sig-storage/nfsplugin:v4.8.0"
         args = [
           "--endpoint=unix://csi/csi.sock",
           "--nodeid=${attr.unique.hostname}",
