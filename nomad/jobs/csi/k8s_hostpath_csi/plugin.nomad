@@ -13,7 +13,7 @@ job "csi-driver-host-path" {
       driver = "docker"
 
       config {
-        image = "registry.k8s.io/sig-storage/hostpathplugin:v1.14.0"
+        image = "registry.k8s.io/sig-storage/hostpathplugin:v1.14.1"
 
         args = [
           "--drivername=hostpath.csi.k8s.io",
