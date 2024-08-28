@@ -24,7 +24,7 @@ job "multi-scrobbler" {
       driver = "docker"
 
       config {
-        image = "foxxmd/multi-scrobbler:0.8.2-alpine"
+        image = "foxxmd/multi-scrobbler:0.8.3-alpine"
         ports = ["http"]
         #volumes = [
         #  "secrets/config.json:/config/config.json",
