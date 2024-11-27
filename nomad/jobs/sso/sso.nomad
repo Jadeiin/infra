@@ -15,7 +15,7 @@ job "sso" {
       driver = "docker"
 
       config {
-        image = "bitnami/openldap:2.6.8"
+        image = "bitnami/openldap:2.6.9"
         ports = ["ldap"]
         volumes = [
           "/opt/nomad-volume/openldap/data:/bitnami/openldap",
