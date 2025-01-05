@@ -15,6 +15,11 @@ job "mozhi" {
       name     = JOB
       port     = "http"
       provider = "nomad"
+      tags = [
+        "traefik.enable=true",
+        "traefik.http.routers.${NOMAD_JOB_NAME}.tls=true",
+        "traefik.http.routers.${NOMAD_JOB_NAME}.tls.certresolver=letsencrypt",
+      ]
       check {
         type     = "http"
         path     = "/api/version"
