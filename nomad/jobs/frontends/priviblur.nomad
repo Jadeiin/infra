@@ -1,0 +1,73 @@
+job "priviblur" {
+  datacenters = ["dc1"]
+  type        = "service"
+
+  group "priviblur" {
+    count = 1
+
+    network {
+      port "http" {
+        to = 8000
+      }
+      # port "redis" {
+      #   to = 6379
+      # }
+    }
+
+    service {
+      name     = JOB
+      port     = "http"
+      provider = "nomad"
+      tags = [
+        "traefik.enable=true",
+        "traefik.http.routers.${NOMAD_JOB_NAME}.tls=true",
+        "traefik.http.routers.${NOMAD_JOB_NAME}.tls.certresolver=letsencrypt",
+      ]
+    }
+
+    task "priviblur" {
+      driver = "docker"
+
+      config {
+        image = "quay.io/syeopite/priviblur:0.2.1"
+        ports = ["http"]
+      }
+
+      env {
+        RIVIBLUR_CONFIG_LOCATION = "${NOMAD_TASK_DIR}"
+      }
+
+      artifact {
+        source      = "https://github.com/syeopite/priviblur/raw/refs/heads/master/config.example.toml"
+        destination = "local/config.example.toml"
+      }
+
+      template {
+        source      = "local/config.example.toml"
+        destination = "local/config.toml"
+      }
+
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+    }
+
+    # task "redis" {
+    #   driver = "docker"
+
+    #   config {
+    #     image = "redis:6.2.5"
+    #     ports = ["redis"]
+    #     volumes = [
+    #       "/opt/nomad-volume/priviblur/redis/data:/data"
+    #     ]
+    #   }
+
+    #   resources {
+    #     cpu    = 100
+    #     memory = 64
+    #   }
+    # }
+  }
+}
