@@ -31,9 +31,14 @@ job "redlib" {
     task "redlib" {
       driver = "docker"
 
+      user = "nobody"
+
       config {
-        image = "quay.io/redlib/redlib:latest"
-        ports = ["http"]
+        image           = "quay.io/redlib/redlib:latest"
+        ports           = ["http"]
+        readonly_rootfs = true
+        security_opt    = ["no-new-privileges"]
+        cap_drop        = ["all"]
       }
 
       artifact {
