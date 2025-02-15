@@ -28,7 +28,7 @@ job "alexandrite" {
       user = "nobody"
 
       config {
-        image           = "ghcr.io/sheodox/alexandrite:0.8.19"
+        image           = "ghcr.io/sheodox/alexandrite:0.8.20"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
