@@ -36,7 +36,7 @@ job "n8n" {
     task "n8n" {
       driver = "docker"
       config {
-        image = "n8nio/n8n:1.79.1"
+        image = "n8nio/n8n:1.80.0"
         ports = ["http"]
         volumes = [
           "/opt/nomad-volume/n8n:/home/node/.n8n"
