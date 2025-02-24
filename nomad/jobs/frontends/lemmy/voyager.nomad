@@ -28,7 +28,7 @@ job "voyager" {
       user = "nobody"
 
       config {
-        image           = "ghcr.io/aeharding/voyager:2.24.2"
+        image           = "ghcr.io/aeharding/voyager:2.24.3"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
