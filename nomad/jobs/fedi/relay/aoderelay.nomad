@@ -25,7 +25,7 @@ job "aoderelay" {
       driver = "docker"
 
       config {
-        image = "asonix/relay:0.3.85"
+        image = "asonix/relay:0.3.116"
         ports = ["http"]
         volumes = [
           "/opt/nomad-volume/aoderelay:/mnt"
