@@ -29,7 +29,7 @@ job "priviblur" {
       driver = "docker"
 
       config {
-        image = "quay.io/syeopite/priviblur:0.2.1"
+        image = "quay.io/syeopite/priviblur:0.3.0"
         ports = ["http"]
       }
 
