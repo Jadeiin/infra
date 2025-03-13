@@ -37,11 +37,10 @@ job "rimgo" {
 
       artifact {
         source      = "https://codeberg.org/rimgo/rimgo/raw/branch/main/.env.example"
-        destination = "local/env.example"
       }
 
       template {
-        source      = "local/env.example"
+        source      = "local/.env.example"
         destination = "local/env"
         env         = true
       }

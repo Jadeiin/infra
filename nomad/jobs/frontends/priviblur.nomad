@@ -39,7 +39,6 @@ job "priviblur" {
 
       artifact {
         source      = "https://github.com/syeopite/priviblur/raw/refs/heads/master/config.example.toml"
-        destination = "local/config.example.toml"
       }
 
       template {

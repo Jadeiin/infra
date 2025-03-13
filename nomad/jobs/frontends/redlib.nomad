@@ -43,11 +43,10 @@ job "redlib" {
 
       artifact {
         source      = "https://github.com/redlib-org/redlib/raw/refs/heads/main/.env.example"
-        destination = "local/env.example"
       }
 
       template {
-        source      = "local/env.example"
+        source      = "local/.env.example"
         destination = "local/env"
         env         = true
       }
