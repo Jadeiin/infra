@@ -42,7 +42,7 @@ job "redlib" {
       }
 
       artifact {
-        source      = "https://github.com/redlib-org/redlib/raw/refs/heads/main/.env.example"
+        source = "https://github.com/redlib-org/redlib/raw/refs/heads/main/.env.example"
       }
 
       template {

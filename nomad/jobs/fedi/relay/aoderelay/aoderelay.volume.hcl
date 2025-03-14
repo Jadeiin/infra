@@ -1,5 +1,5 @@
-name = "aoderelay"
-type = "host"
+name      = "aoderelay"
+type      = "host"
 plugin_id = "mkdir"
 
 capability {

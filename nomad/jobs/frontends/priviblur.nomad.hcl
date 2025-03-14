@@ -38,7 +38,7 @@ job "priviblur" {
       }
 
       artifact {
-        source      = "https://github.com/syeopite/priviblur/raw/refs/heads/master/config.example.toml"
+        source = "https://github.com/syeopite/priviblur/raw/refs/heads/master/config.example.toml"
       }
 
       template {

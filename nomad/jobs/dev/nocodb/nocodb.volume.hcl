@@ -1,5 +1,5 @@
-name = "nocodb"
-type = "host"
+name      = "nocodb"
+type      = "host"
 plugin_id = "mkdir"
 
 capability {

@@ -1,5 +1,5 @@
-name = "syncyomi"
-type = "host"
+name      = "syncyomi"
+type      = "host"
 plugin_id = "mkdir"
 
 capability {

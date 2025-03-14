@@ -36,7 +36,7 @@ job "rimgo" {
       }
 
       artifact {
-        source      = "https://codeberg.org/rimgo/rimgo/raw/branch/main/.env.example"
+        source = "https://codeberg.org/rimgo/rimgo/raw/branch/main/.env.example"
       }
 
       template {
