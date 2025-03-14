@@ -1,0 +1,19 @@
+name: Check HCL
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-hcl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Fail on malformatted files
+        uses: devops-infra/action-format-hcl@master
+        with:
+          check: true
+          write: false
