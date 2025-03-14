@@ -32,7 +32,6 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "(^|/)*\\.nomad$",
         "(^|/)*\\.nomad\\.hcl$"
       ],
       "matchStrings": [
