@@ -1,0 +1,29 @@
+name: Format HCL
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  format-hcl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Set up Nomad
+        uses: hashicorp/setup-nomad@main
+
+      - name: Format HCL files
+        run: |
+          while IFS= read -r file; do
+            nomad fmt "$file" &>/dev/null
+          done < <(find . -type f -name "*.hcl")
+
+      - name: Commit changes to repo
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_prefix: "chore(format):"
+          commit_message: "format HCL files"
