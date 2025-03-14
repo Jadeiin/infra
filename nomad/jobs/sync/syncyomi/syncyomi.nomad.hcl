@@ -4,6 +4,11 @@ job "syncyomi" {
 
   group "syncyomi" {
 
+    volume "data" {
+      type   = "host"
+      source = "syncyomi"
+    }
+
     network {
       port "http" {
         to = 8282
@@ -27,14 +32,14 @@ job "syncyomi" {
       config {
         image = "ghcr.io/syncyomi/syncyomi:v1.1.3"
         ports = ["http"]
-        volumes = [
-          "/opt/nomad-volume/syncyomi:/config"
-        ]
+        # volumes = [
+        #   "/opt/nomad-volume/syncyomi:/config"
+        # ]
       }
 
-    #   env {
-    #     TZ = "Asia/Shanghai"
-    #   }
+      # env {
+      #   TZ = "Asia/Shanghai"
+      # }
 
       resources {
         cpu    = 100

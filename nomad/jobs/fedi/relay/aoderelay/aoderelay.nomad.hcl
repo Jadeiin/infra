@@ -4,6 +4,11 @@ job "aoderelay" {
   group "aoderelay" {
     count = 1
 
+    volume "data" {
+      type   = "host"
+      source = "aoderelay"
+    }
+
     network {
       port "http" {
         to = 8080
@@ -27,9 +32,14 @@ job "aoderelay" {
       config {
         image = "asonix/relay:0.3.116"
         ports = ["http"]
-        volumes = [
-          "/opt/nomad-volume/aoderelay:/mnt"
-        ]
+        # volumes = [
+        #   "/opt/nomad-volume/aoderelay:/mnt"
+        # ]
+      }
+
+      volume_mount {
+        volume      = "data"
+        destination = "/mnt"
       }
 
       template {

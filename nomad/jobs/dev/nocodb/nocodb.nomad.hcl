@@ -1,20 +1,17 @@
 job "nocodb" {
   group "nocodb" {
+
+    volume "data" {
+      type   = "host"
+      source = "nocodb"
+    }
+
     network {
       port "http" {
         to = "8080"
       }
     }
-    volume "data" {
-       type = "host"
-       source = "nocodb"
-    }
-    #volume "data" {
-    #  type            = "csi"
-    #  source          = "nocodb"
-    #  attachment_mode = "file-system"
-    #  access_mode     = "single-node-writer"
-    #}
+
     service {
       name     = JOB
       port     = "http"
@@ -25,8 +22,10 @@ job "nocodb" {
         "traefik.http.routers.${NOMAD_JOB_NAME}.tls.certresolver=letsencrypt",
       ]
     }
+
     task "nocodb" {
       driver = "docker"
+
       config {
         image = "nocodb/nocodb:0.262.2"
         ports = ["http"]
@@ -39,14 +38,17 @@ job "nocodb" {
         #  source = "local"
         #}
       }
+
       volume_mount {
         volume      = "data"
         destination = "/usr/app/data"
       }
+
       env {
         #NC_PUBLIC_URL   = "https://${var.domain}"
         NC_DISABLE_TELE = true
       }
+
       resources {
         cpu    = 200
         memory = 256

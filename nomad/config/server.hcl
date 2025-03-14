@@ -26,9 +26,6 @@ client {
 
 plugin "docker" {
   config {
-    volumes {
-      enabled = true
-    }
     allow_privileged = true
   }
 }
