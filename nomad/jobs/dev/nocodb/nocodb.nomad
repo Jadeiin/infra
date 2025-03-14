@@ -5,6 +5,10 @@ job "nocodb" {
         to = "8080"
       }
     }
+    volume "data" {
+       type = "host"
+       source = "nocodb"
+    }
     #volume "data" {
     #  type            = "csi"
     #  source          = "nocodb"
@@ -26,19 +30,19 @@ job "nocodb" {
       config {
         image = "nocodb/nocodb:0.262.2"
         ports = ["http"]
-        volumes = [
-          "/opt/nomad-volume/nocodb:/usr/app/data"
-        ]
+        #volumes = [
+        #  "/opt/nomad-volume/nocodb:/usr/app/data"
+        #]
         #mount = {
         #  type   = "bind"
         #  target = "/usr/app/data"
         #  source = "local"
         #}
       }
-      #volume_mount {
-      #  volume      = "data"
-      #  destination = "/usr/app/data"
-      #}
+      volume_mount {
+        volume      = "data"
+        destination = "/usr/app/data"
+      }
       env {
         #NC_PUBLIC_URL   = "https://${var.domain}"
         NC_DISABLE_TELE = true
