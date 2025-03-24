@@ -27,7 +27,7 @@ job "nocodb" {
       driver = "docker"
 
       config {
-        image = "nocodb/nocodb:0.262.4"
+        image = "nocodb/nocodb:0.262.5"
         ports = ["http"]
         #volumes = [
         #  "/opt/nomad-volume/nocodb:/usr/app/data"
