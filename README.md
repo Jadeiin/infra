@@ -18,9 +18,10 @@ This repository contains infrastructure configurations and deployment specificat
 
 ## Key Components
 
-### Nomad Infrastructure
+### Infrastructure Management
 
-The `nomad/` directory contains configurations for:
+#### Nomad Infrastructure
+HashiCorp Nomad serves as the primary provisioning and orchestration tool. The `nomad/` directory contains configurations for:
 - Frontend privacy-focused services
 - Development tools
 - Infrastructure services
