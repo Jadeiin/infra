@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.hcl'
 
 jobs:
   format-hcl:
     runs-on: ubuntu-latest
+    if: github.actor != 'renovate[bot]'
     steps:
       - name: Checkout code
         uses: actions/checkout@main
