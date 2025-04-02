@@ -37,6 +37,11 @@ job "syncyomi" {
         # ]
       }
 
+      volume_mount {
+        volume      = "data"
+        destination = "/config"
+      }
+
       # env {
       #   TZ = "Asia/Shanghai"
       # }
