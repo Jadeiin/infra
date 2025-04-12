@@ -33,6 +33,12 @@ job "wikimore" {
         cap_drop        = ["all"]
       }
 
+      env {
+        PORT            = "8109"
+        UWSGI_PROCESSES = "2"
+        UWSGI_THREADS   = "2"
+      }
+
       resources {
         cpu    = 100
         memory = 128

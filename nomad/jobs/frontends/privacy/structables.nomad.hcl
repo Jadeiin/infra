@@ -32,14 +32,10 @@ job "structables" {
         cap_drop     = ["all"]
       }
 
-      artifact {
-        source = "https://git.private.coffee/PrivateCoffee/structables/raw/branch/main/.env.example"
-      }
-
-      template {
-        source      = "local/.env.example"
-        destination = "local/env"
-        env         = true
+      env {
+        PORT            = "8002"
+        UWSGI_PROCESSES = "2"
+        UWSGI_THREADS   = "2"
       }
 
       resources {
