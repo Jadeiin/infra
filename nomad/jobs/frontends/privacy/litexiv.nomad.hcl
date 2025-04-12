@@ -26,7 +26,7 @@ job "litexiv" {
       driver = "docker"
 
       config {
-        image        = "codeberg.org/Peaksol/litexiv:latest"
+        image        = "codeberg.org/peaksol/litexiv:latest"
         ports        = ["http"]
         security_opt = ["no-new-privileges"]
         cap_drop     = ["all"]
