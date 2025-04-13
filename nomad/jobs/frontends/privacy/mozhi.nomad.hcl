@@ -32,8 +32,9 @@ job "mozhi" {
       driver = "docker"
 
       config {
-        image = "codeberg.org/aryak/mozhi:latest"
-        ports = ["http"]
+        force_pull = true
+        image      = "codeberg.org/aryak/mozhi:latest"
+        ports      = ["http"]
       }
 
       resources {

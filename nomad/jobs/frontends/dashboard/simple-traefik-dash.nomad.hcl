@@ -26,8 +26,9 @@ job "std" {
       driver = "docker"
 
       config {
-        image = "msjpq/simple-traefik-dash:latest"
-        ports = ["http"]
+        force_pull = true
+        image      = "msjpq/simple-traefik-dash:latest"
+        ports      = ["http"]
       }
 
       template {

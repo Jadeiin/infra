@@ -34,6 +34,7 @@ job "redlib" {
       user = "nobody"
 
       config {
+        force_pull      = true
         image           = "quay.io/redlib/redlib:latest"
         ports           = ["http"]
         readonly_rootfs = true
