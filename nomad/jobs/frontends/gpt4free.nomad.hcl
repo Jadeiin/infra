@@ -26,7 +26,7 @@ job "g4f" {
       driver = "docker"
 
       config {
-        image   = "hlohaus789/g4f:0.5.1.3-slim"
+        image   = "hlohaus789/g4f:0.5.1.4-slim"
         ports   = ["http"]
         command = "python"
         args = [
