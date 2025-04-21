@@ -34,7 +34,7 @@ job "priviblur" {
       }
 
       env {
-        RIVIBLUR_CONFIG_LOCATION = "${NOMAD_TASK_DIR}"
+        PRIVIBLUR_CONFIG_LOCATION = NOMAD_TASK_DIR
       }
 
       artifact {
