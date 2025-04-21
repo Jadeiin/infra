@@ -62,6 +62,9 @@ job "traefik" {
         image = "traefik:v2.11.24"
         #ports        = ["http", "https", "api"]
         network_mode = "host"
+        args = [
+          "--configFile=local/traefik.toml",
+        ]
 
         #volumes = [
         #  "local/acme.json:/acme.json",  # permission 600 plz
@@ -74,12 +77,12 @@ job "traefik" {
         #  source = "local/acme.json"
         #}
 
-        mount {
-          type     = "bind"
-          target   = "/etc/traefik/traefik.toml"
-          source   = "local/traefik.toml"
-          readonly = true
-        }
+        # mount {
+        #   type     = "bind"
+        #   target   = "/etc/traefik/traefik.toml"
+        #   source   = "local/traefik.toml"
+        #   readonly = true
+        # }
       }
 
       template {
