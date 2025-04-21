@@ -26,26 +26,6 @@ job "aoderelay" {
       ]
     }
 
-    task "init" {
-      lifecycle {
-        hook = "prestart"
-      }
-      driver = "docker"
-      config {
-        image   = "busybox"
-        command = "sh"
-        args    = ["-c", "chown -R 991:991 /mnt"]
-      }
-      volume_mount {
-        volume      = "data"
-        destination = "/mnt"
-      }
-      resources {
-        cpu    = 100
-        memory = 32
-      }
-    }
-
     task "aoderelay" {
       driver = "docker"
 
