@@ -26,7 +26,7 @@ job "wikimore" {
       driver = "docker"
 
       config {
-        image           = "git.private.coffee/privatecoffee/wikimore:v0.1.12"
+        image           = "git.private.coffee/privatecoffee/wikimore:v0.1.13"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
