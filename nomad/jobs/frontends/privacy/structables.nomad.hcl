@@ -26,7 +26,7 @@ job "structables" {
       driver = "docker"
 
       config {
-        image        = "git.private.coffee/privatecoffee/structables:v0.4.2"
+        image        = "git.private.coffee/privatecoffee/structables:v0.4.3"
         ports        = ["http"]
         security_opt = ["no-new-privileges"]
         cap_drop     = ["all"]
