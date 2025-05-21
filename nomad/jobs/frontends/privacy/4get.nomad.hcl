@@ -36,7 +36,7 @@ job "4get" {
         data        = <<EOF
 FOURGET_PROTO=http
 {{ with nomadVar "nomad/jobs" }}
-FOURGET_SERVER_NAME={{ env "NOMAD_JOB_NAME" }}.{{ .domain }}
+FOURGET_SERVER_NAME={{env "NOMAD_JOB_NAME"}}.{{ .domain }}
 {{ end }}
 EOF
         destination = "local/env"

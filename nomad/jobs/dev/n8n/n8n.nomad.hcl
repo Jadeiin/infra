@@ -49,8 +49,8 @@ job "n8n" {
       template {
         data        = <<EOF
 {{ with nomadVar "nomad/jobs" }}
-N8N_HOST = {{ env "NOMAD_JOB_NAME" }}.{{ .domain }}
-WEBHOOK_URL = https://{{ env "NOMAD_JOB_NAME" }}.{{ .domain }}/
+N8N_HOST = {{env "NOMAD_JOB_NAME"}}.{{ .domain }}
+WEBHOOK_URL = https://{{env "NOMAD_JOB_NAME"}}.{{ .domain }}/
 {{ end }}
 EOF
         destination = "local/env"

@@ -44,7 +44,7 @@ job "aoderelay" {
 
       template {
         data        = <<EOF
-HOSTNAME = {{ env "NOMAD_JOB_NAME" }}.{{ with nomadVar "nomad/jobs" }}{{ .domain }}{{ end }}
+HOSTNAME = {{env "NOMAD_JOB_NAME"}}.{{ with nomadVar "nomad/jobs" }}{{ .domain }}{{ end }}
 ADDR = 0.0.0.0
 PORT = 8080
 DEBUG = false

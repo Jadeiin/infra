@@ -26,14 +26,14 @@ job "litexiv" {
       driver = "docker"
 
       config {
-        image        = "codeberg.org/peaksol/litexiv:v2.2.0"
+        image        = "codeberg.org/litexiv/litexiv:v2.2.1"
         ports        = ["http"]
         security_opt = ["no-new-privileges"]
         cap_drop     = ["all"]
       }
 
       artifact {
-        source = "https://codeberg.org/Peaksol/LiteXiv/raw/branch/v2/.env.example"
+        source = "https://codeberg.org/LiteXiv/LiteXiv/raw/branch/v2/.env.example"
       }
 
       template {
