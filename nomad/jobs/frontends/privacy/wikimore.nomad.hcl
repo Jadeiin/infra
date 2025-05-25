@@ -20,7 +20,7 @@ job "wikimore" {
         "traefik.http.routers.${NOMAD_JOB_NAME}.tls=true",
         "traefik.http.routers.${NOMAD_JOB_NAME}.tls.certresolver=letsencrypt",
         // RateLimit
-        "traefik.http.routers.${NOMAD_JOB_NAME}.middlewares=ratelimit@file",
+        "traefik.http.routers.${NOMAD_JOB_NAME}.middlewares=ratelimit",
         "traefik.http.middlewares.ratelimit.rateLimit.average=100",
         "traefik.http.middlewares.ratelimit.rateLimit.burst=50",
         "traefik.http.middlewares.ratelimit.rateLimit.period=10s",
