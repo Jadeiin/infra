@@ -56,7 +56,7 @@ job "priviblur" {
     #   driver = "docker"
 
     #   config {
-    #     image = "redis:6.2.18"
+    #     image = "redis:6.2.19"
     #     ports = ["redis"]
     #     volumes = [
     #       "/opt/nomad-volume/priviblur/redis/data:/data"
