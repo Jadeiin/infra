@@ -36,16 +36,16 @@ job "komari" {
         destination = "/app/data"
       }
 
-#       template {
-#         data        = <<EOF
-# {{ with nomadVar "nomad/jobs/komari" }}
-# KOMARI_ENABLE_CLOUDFLARED = true
-# KOMARI_CLOUDFLARED_TOKEN = {{ . cloudflared_token }}
-# {{ end }}
-# EOF
-#         destination = "local/env"
-#         env         = true
-#       }
+      #       template {
+      #         data        = <<EOF
+      # {{ with nomadVar "nomad/jobs/komari" }}
+      # KOMARI_ENABLE_CLOUDFLARED = true
+      # KOMARI_CLOUDFLARED_TOKEN = {{ . cloudflared_token }}
+      # {{ end }}
+      # EOF
+      #         destination = "local/env"
+      #         env         = true
+      #       }
 
       resources {
         cpu    = 100
