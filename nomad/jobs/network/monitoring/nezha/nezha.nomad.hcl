@@ -30,16 +30,16 @@ job "nezha" {
         image = "ghcr.io/nezhahq/nezha:v1.13.0"
         ports = ["http"]
       }
-    }
 
-    volume_mount {
-      volume      = "data"
-      destination = "/dashboard/data"
-    }
+      volume_mount {
+        volume      = "data"
+        destination = "/dashboard/data"
+      }
 
-    resources {
-      cpu    = 100
-      memory = 128
+      resources {
+        cpu    = 100
+        memory = 128
+      }
     }
   }
 }

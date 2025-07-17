@@ -30,16 +30,27 @@ job "komari" {
         image = "ghcr.io/komari-monitor/komari:0.1.6"
         ports = ["http"]
       }
-    }
 
-    volume_mount {
-      volume      = "data"
-      destination = "/app/data"
-    }
+      volume_mount {
+        volume      = "data"
+        destination = "/app/data"
+      }
 
-    resources {
-      cpu    = 100
-      memory = 128
+#       template {
+#         data        = <<EOF
+# {{ with nomadVar "nomad/jobs/komari" }}
+# KOMARI_ENABLE_CLOUDFLARED = true
+# KOMARI_CLOUDFLARED_TOKEN = {{ . cloudflared_token }}
+# {{ end }}
+# EOF
+#         destination = "local/env"
+#         env         = true
+#       }
+
+      resources {
+        cpu    = 100
+        memory = 128
+      }
     }
   }
 }
