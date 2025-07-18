@@ -26,8 +26,7 @@ job "trafiboard" {
       driver = "docker"
 
       config {
-        force_pull = true
-        image      = "docker pull ghcr.io/bartoszkaszewczuk/trafiboard:v0.15.0"
+        image      = "ghcr.io/bartoszkaszewczuk/trafiboard:v0.15.0"
         ports      = ["http"]
       }
 
