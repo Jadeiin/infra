@@ -1,3 +1,9 @@
+variable "node_name" {
+  description = "Node name constraint for Traefik deployment"
+  type        = string
+  default     = ""
+}
+
 job "traefik" {
   region      = "global"
   datacenters = ["dc1"]
@@ -8,7 +14,7 @@ job "traefik" {
 
     constraint {
       attribute = "${node.unique.name}"
-      value     = "sf-1"
+      value     = var.node_name
     }
 
     ephemeral_disk {
