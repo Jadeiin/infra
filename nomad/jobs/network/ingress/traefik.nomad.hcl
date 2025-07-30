@@ -34,6 +34,10 @@ job "traefik" {
         host_network = "overlay"
         static       = 8080
       }
+
+      port "metrics" {
+        static = 9100
+      }
     }
 
     service {
@@ -100,6 +104,8 @@ job "traefik" {
   address = ":{{env "NOMAD_PORT_https"}}"
   [entryPoints.traefik]
   address = ":{{env "NOMAD_PORT_dashboard"}}"
+  [entryPoints.metrics]
+  address = ":{{env "NOMAD_PORT_metrics"}}"
 
 [certificatesResolvers.letsencrypt.acme]
   email = "{{ with nomadVar "nomad/jobs" }}{{ .email }}{{ end }}"
@@ -110,6 +116,13 @@ job "traefik" {
 [api]
   dashboard = true
   insecure  = true
+
+[metrics]
+  [metrics.prometheus]
+    entryPoint = "metrics"
+    addEntryPointsLabels = true
+    addRoutersLabels = true
+    addServicesLabels = true
 
 [providers.nomad]
   exposedByDefault = false
