@@ -37,7 +37,7 @@ job "mlmym" {
 
       env {
         # TODO: Change this to the self-hosted instance
-        #   LEMMY_DOMAIN = "lemmydomain.com"
+        # LEMMY_DOMAIN = "lemmydomain.com"
       }
 
       resources {

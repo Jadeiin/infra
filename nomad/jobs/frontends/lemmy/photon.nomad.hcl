@@ -37,7 +37,7 @@ job "photon" {
 
       env {
         # TODO: Change this to the self-hosted instance
-        #   PUBLIC_INSTANCE_URL = "lemmy.ml"
+        # PUBLIC_INSTANCE_URL = "lemmy.ml"
       }
 
       resources {

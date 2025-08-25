@@ -1,13 +1,13 @@
-job "voyager" {
+job "blorp" {
   datacenters = ["dc1"]
   type        = "service"
 
-  group "voyager" {
+  group "blorp" {
     count = 1
 
     network {
       port "http" {
-        to = 5314
+        to = 80
       }
     }
 
@@ -22,13 +22,13 @@ job "voyager" {
       ]
     }
 
-    task "voyager" {
+    task "blorp" {
       driver = "docker"
 
       user = "nobody"
 
       config {
-        image           = "ghcr.io/aeharding/voyager:2.39.2"
+        image           = "christianjuth/blorp:v1.9.20"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
@@ -37,7 +37,9 @@ job "voyager" {
 
       env {
         # TODO: Change this to the self-hosted instance
-        # CUSTOM_LEMMY_SERVERS = "lemmy.world,lemmy.ml,sh.itjust.works"
+        # REACT_APP_DEFAULT_INSTANCE = "https://lemmy.zip"
+        # REACT_APP_NAME = "Blorp"
+        # REACT_APP_LOCK_TO_DEFAULT_INSTANCE = false
       }
 
       resources {

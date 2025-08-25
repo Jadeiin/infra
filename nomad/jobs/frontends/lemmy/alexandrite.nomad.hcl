@@ -37,7 +37,7 @@ job "alexandrite" {
 
       env {
         # TODO: Change this to the self-hosted instance
-        #   ALEXANDRITE_DEFAULT_INSTANCE = "lemmy.world"
+        # ALEXANDRITE_DEFAULT_INSTANCE = "lemmy.world"
       }
 
       resources {
