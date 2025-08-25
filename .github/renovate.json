@@ -35,7 +35,7 @@
         "(^|/)*\\.nomad\\.hcl$"
       ],
       "matchStrings": [
-        "\\s*image\\s*=\\s*\"(?<depName>.*?):(?<currentValue>.*?)\"\\n"
+        "\\s*image\\s*=\\s*\"(?<depName>.*?):(?<currentValue>.*?)\"\\r?\\n"
       ],
       "datasourceTemplate": "docker"
     }
