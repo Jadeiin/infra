@@ -34,8 +34,8 @@ job "quetre" {
       }
 
       env {
-        NODE_ENV = "production"
-        PORT = "3000"
+        NODE_ENV     = "production"
+        PORT         = "3000"
         CACHE_PERIOD = "1h"
         # REDIS_URL = "redis:6379"
         REDIS_TTL = "3600"
