@@ -26,7 +26,7 @@ job "4get" {
       driver = "docker"
 
       config {
-        image        = "luuul/4get:1.0.29"
+        image        = "luuul/4get:1.0.30"
         ports        = ["http"]
         security_opt = ["no-new-privileges"]
         cap_drop     = ["all"]
