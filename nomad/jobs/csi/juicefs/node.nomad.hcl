@@ -7,7 +7,7 @@ job "jfs-node" {
       driver = "docker"
 
       config {
-        image = "juicedata/juicefs-csi-driver:v0.29.2"
+        image = "juicedata/juicefs-csi-driver:v0.30.0"
 
         args = [
           "--endpoint=unix://csi/csi.sock",
