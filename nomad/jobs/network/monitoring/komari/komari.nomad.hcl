@@ -27,7 +27,7 @@ job "komari" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/komari-monitor/komari:1.0.7"
+        image = "ghcr.io/komari-monitor/komari:1.0.8"
         ports = ["http"]
       }
 
