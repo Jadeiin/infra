@@ -69,7 +69,7 @@ job "traefik" {
       driver = "docker"
 
       config {
-        image = "traefik:v3.5.3"
+        image = "traefik:v3.5.4"
         #ports        = ["http", "https", "api"]
         network_mode = "host"
         args = [
