@@ -27,7 +27,7 @@ job "nezha" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/nezhahq/nezha:v1.14.9"
+        image = "ghcr.io/nezhahq/nezha:v1.14.10"
         ports = ["http"]
       }
 
