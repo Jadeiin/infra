@@ -26,7 +26,7 @@ job "trala" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/dannybouwers/trala:0.10.1"
+        image = "ghcr.io/dannybouwers/trala:0.11.0"
         ports = ["http"]
       }
 
