@@ -18,7 +18,7 @@ job "democratic-csi" {
       driver = "docker"
 
       config {
-        image = "democraticcsi/democratic-csi:v1.9.3"
+        image = "democraticcsi/democratic-csi:v1.9.5"
 
         #ports = ["grpc"]
 

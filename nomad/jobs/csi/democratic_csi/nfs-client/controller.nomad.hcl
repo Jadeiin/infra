@@ -11,7 +11,7 @@ job "storage-controller" {
       driver = "docker"
 
       config {
-        image = "democraticcsi/democratic-csi:v1.9.4"
+        image = "democraticcsi/democratic-csi:v1.9.5"
         ports = ["grpc"]
 
         args = [
