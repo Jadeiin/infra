@@ -33,7 +33,7 @@ job "rimgo" {
       user = "nobody"
 
       config {
-        image           = "codeberg.org/rimgo/rimgo:1.4.0"
+        image           = "codeberg.org/rimgo/rimgo:1.4.1"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
