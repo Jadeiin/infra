@@ -51,7 +51,7 @@ job "quetre" {
     #   driver = "docker"
 
     #   config {
-    #     image = "redis:8.6.1"
+    #     image = "redis:8.6.2"
     #     ports = ["redis"]
     #   }
 
