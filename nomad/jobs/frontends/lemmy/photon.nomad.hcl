@@ -28,7 +28,7 @@ job "photon" {
       user = "nobody"
 
       config {
-        image           = "ghcr.io/xyphyn/photon:v2.3.0"
+        image           = "ghcr.io/xyphyn/photon:v2.3.1"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
