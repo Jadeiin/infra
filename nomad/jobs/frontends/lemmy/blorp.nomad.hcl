@@ -28,7 +28,7 @@ job "blorp" {
       user = "nobody"
 
       config {
-        image           = "christianjuth/blorp:v1.12.4"
+        image           = "christianjuth/blorp:v1.13.1"
         ports           = ["http"]
         readonly_rootfs = true
         security_opt    = ["no-new-privileges"]
