@@ -56,7 +56,7 @@ job "priviblur" {
     #   driver = "docker"
 
     #   config {
-    #     image = "redis:8.6.3"
+    #     image = "redis:8.8.0"
     #     ports = ["redis"]
     #   }
 
