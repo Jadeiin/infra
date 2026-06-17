@@ -31,7 +31,7 @@ job "mlflow" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/mlflow/mlflow:v3.13.0"
+        image = "ghcr.io/mlflow/mlflow:v3.14.0"
         ports = ["http"]
         args = [
           "mlflow", "server",
