@@ -30,7 +30,7 @@ job "syncyomi" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/syncyomi/syncyomi:v1.1.10"
+        image = "ghcr.io/syncyomi/syncyomi:v1.1.11"
         ports = ["http"]
         # volumes = [
         #   "/opt/nomad-volume/syncyomi:/config"
