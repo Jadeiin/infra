@@ -26,7 +26,7 @@ job "trafiboard" {
       driver = "docker"
 
       config {
-        image = "ghcr.io/bartoszkaszewczuk/trafiboard:v0.51.1"
+        image = "ghcr.io/bartoszkaszewczuk/trafiboard:v0.52.0"
         ports = ["http"]
       }
 
