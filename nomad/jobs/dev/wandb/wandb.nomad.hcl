@@ -31,7 +31,7 @@ job "wandb" {
       driver = "docker"
 
       config {
-        image = "wandb/local:0.84.1"
+        image = "wandb/local:0.85.0"
         ports = ["http"]
       }
 
