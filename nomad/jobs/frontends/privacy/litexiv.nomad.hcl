@@ -31,7 +31,7 @@ job "litexiv" {
       driver = "docker"
 
       config {
-        image        = "codeberg.org/litexiv/litexiv:v2.3.0"
+        image        = "codeberg.org/litexiv/litexiv:v2.3.1"
         ports        = ["http"]
         security_opt = ["no-new-privileges"]
         cap_drop     = ["all"]
